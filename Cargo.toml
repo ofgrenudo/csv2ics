@@ -1,0 +1,15 @@
+[package]
+name = "csv2ics"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+ics = "0.5"
+csv = "1.1"
+serde = { version = "1.0", features = ["derive"] }
+uuid = { version = "1.11.0", features = [
+    "v4",                # Lets you generate random UUIDs
+    "fast-rng",          # Use a faster (but still sufficiently random) RNG
+    "macro-diagnostics", # Enable better diagnostics for compile-time UUIDs
+] }
+clap = { version = "4.5.21", features = ["derive"] }
