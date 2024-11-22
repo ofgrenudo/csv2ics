@@ -77,7 +77,7 @@ fn process_csv<R: io::Read>(reader: R) -> Result<Vec<EventData>, Box<dyn Error>>
     let mut events = Vec::new();
     for result in csv_reader.deserialize() {
         let csv_event: CsvEventData = result?; // Deserialize into CsvEventData
-        let mut event = EventData {
+        let event = EventData {
             guid: Uuid::new_v4().to_string(), // Generate GUID dynamically
             organizer: csv_event.organizer,
             start_time: csv_event.start_time.replace(&['-', ':'], ""),
